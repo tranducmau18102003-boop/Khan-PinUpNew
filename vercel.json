@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    {
+      "source": "/abc/",
+      "destination": "/index.html#/abc",
+      "permanent": false
+    },
+    {
+      "source": "/abc",
+      "destination": "/index.html#/abc",
+      "permanent": false
+    },
+    {
+      "source": "/abc.html",
+      "destination": "/index.html#/abc",
+      "permanent": false
+    },
+    {
+      "source": "/index.html/abc",
+      "destination": "/index.html#/abc",
+      "permanent": false
+    }
+  ]
+}
