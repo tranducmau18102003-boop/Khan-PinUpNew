@@ -22,18 +22,40 @@
       place-items: center;
       background: #060a28;
       font-family: Arial, sans-serif;
+      padding: 12px;
+    }
+
+    .promo-link {
+      display: block;
+      line-height: 0;
+      max-width: min(100vw - 24px, 498px);
     }
 
     .promo-image {
-      width: min(100vw, 498px);
-      height: auto;
       display: block;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      image-rendering: high-quality;
+      -ms-interpolation-mode: bicubic;
+    }
+
+    @supports not (image-rendering: high-quality) {
+      .promo-image {
+        image-rendering: auto;
+      }
     }
   </style>
 </head>
 <body>
-  <a href="https://toptdspup.com/XM6e2688/" aria-label="Claim now">
-    <img class="promo-image" src="./promo-abc.png" alt="PIN-UP casino bonus claim now banner">
+  <a class="promo-link" href="https://toptdspup.com/XM6e2688/" aria-label="Claim now">
+    <img
+      class="promo-image"
+      src="./abc.png"
+      alt="PIN-UP casino bonus claim now banner"
+      decoding="async"
+      fetchpriority="high"
+    >
   </a>
 </body>
 </html>
