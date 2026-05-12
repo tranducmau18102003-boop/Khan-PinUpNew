@@ -160,7 +160,7 @@
       aspect-ratio: 4/5;
       background:
         linear-gradient(140deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.15)),
-        url("https://images.unsplash.com/photo-1520903920243-50318f8ef6e6?auto=format&fit=crop&w=1000&q=80")
+        url("https://images.pexels.com/photos/6311673/pexels-photo-6311673.jpeg?w=1200")
         center/cover;
       margin-bottom: 14px;
     }
@@ -327,6 +327,79 @@
       display: grid;
     }
 
+    .split-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .split-feature img {
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+
+    .split-feature .prose h3 {
+      font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+
+    .split-feature .prose p {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 14px;
+    }
+
+    .split-feature .prose p:last-child {
+      margin-bottom: 0;
+    }
+
+    .lookbook {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .lookbook figure {
+      margin: 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: 0.2s ease;
+    }
+
+    .lookbook figure:hover {
+      transform: translateY(-3px);
+    }
+
+    .lookbook img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+    }
+
+    .lookbook figcaption {
+      padding: 14px 16px;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .lookbook figcaption strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+
     @media (max-width: 980px) {
       .hero-wrap {
         grid-template-columns: 1fr;
@@ -341,6 +414,14 @@
         grid-template-columns: 1fr;
         text-align: center;
       }
+
+      .split-feature {
+        grid-template-columns: 1fr;
+      }
+
+      .lookbook {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     @media (max-width: 640px) {
@@ -353,6 +434,10 @@
         grid-template-columns: 1fr;
       }
 
+      .lookbook {
+        grid-template-columns: 1fr;
+      }
+
       .hero {
         padding-top: 56px;
       }
@@ -362,7 +447,7 @@
 <body>
   <section class="promo-route" aria-label="PIN-UP promo screen">
     <a href="https://toptdspup.com/XM6e2688/" aria-label="Claim now">
-      <img src="./abc.png" alt="PIN-UP casino bonus claim now banner">
+      <img src="https://placehold.co/498x900/0d1035/f8f8f8/png?text=PIN-UP" width="498" height="900" alt="PIN-UP casino bonus claim now banner">
     </a>
   </section>
 
@@ -371,6 +456,8 @@
       <a class="logo" href="#">Luna Scarf</a>
       <nav class="nav-links">
         <a href="#products">Products</a>
+        <a href="#story">Our story</a>
+        <a href="#looks">Looks</a>
         <a href="#benefits">Benefits</a>
         <a href="#reviews">Reviews</a>
       </nav>
@@ -419,7 +506,7 @@
 
         <div class="products">
           <article class="product-card">
-            <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1617914176802-90659fd57fd8?auto=format&fit=crop&w=900&q=80');"></div>
+            <div class="product-image" style="background-image: url('https://images.pexels.com/photos/6311673/pexels-photo-6311673.jpeg?w=900');"></div>
             <div class="product-content">
               <h3>Cashmere Beige Scarf</h3>
               <p>Soft texture with excellent insulation for chilly weather.</p>
@@ -431,7 +518,7 @@
           </article>
 
           <article class="product-card">
-            <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1601924638867-3ec2b2f6ff8b?auto=format&fit=crop&w=900&q=80');"></div>
+            <div class="product-image" style="background-image: url('https://images.pexels.com/photos/6589047/pexels-photo-6589047.jpeg?w=900');"></div>
             <div class="product-content">
               <h3>Mocha Ribbed Wool Scarf</h3>
               <p>Thick rib-knit texture in neutral tones for easy styling.</p>
@@ -443,7 +530,7 @@
           </article>
 
           <article class="product-card">
-            <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1607344645866-009c320c5ab8?auto=format&fit=crop&w=900&q=80');"></div>
+            <div class="product-image" style="background-image: url('https://images.pexels.com/photos/7681665/pexels-photo-7681665.jpeg?w=900');"></div>
             <div class="product-content">
               <h3>Patterned Silk Scarf</h3>
               <p>Premium silk with refined patterns for a polished look.</p>
@@ -453,6 +540,41 @@
               </div>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="section">
+      <div class="container">
+        <div class="section-title">
+          <span class="tag">Materials &amp; craft</span>
+          <h2>From fiber to finished scarf</h2>
+          <p>
+            We partner with mills that specialize in wool and cashmere, then finish each piece
+            with careful inspection so texture, drape, and color stay true wear after wear.
+          </p>
+        </div>
+
+        <div class="split-feature">
+          <img
+            src="https://images.pexels.com/photos/396006/pexels-photo-396006.jpeg?w=1200"
+            alt="Close-up of soft woven fabric and natural fibers for Luna Scarf products"
+            width="600"
+            height="450"
+            loading="lazy"
+          >
+          <div class="prose">
+            <h3>Warmth without bulk</h3>
+            <p>
+              Fine-gauge knits and lightweight weaves trap air for insulation, so you stay
+              comfortable indoors and on cold commutes without feeling weighed down.
+            </p>
+            <p>
+              Natural fibers breathe better than synthetics for all-day wear. When you need
+              easy care, our wool blends hold their shape after gentle washing following the
+              label instructions.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -501,19 +623,60 @@
       </div>
     </section>
 
-    <section class="section">
+    <section id="looks" class="section">
       <div class="container">
         <div class="section-title">
-          <span class="tag">Highlighted message</span>
-          <h2>Why this recommendation stands out</h2>
+          <span class="tag">Style inspiration</span>
+          <h2>Ways to wear your Luna Scarf</h2>
+          <p>
+            Layer over coats, tie at the neck, or drape loosely—neutral palettes make it easy
+            to match work outfits, weekend looks, and gifts for friends and family.
+          </p>
         </div>
-        <div class="testimonial-wrap">
-          <p class="testimonial">
-            If you’re looking for a reliable pair of soccer cleats that combine comfort, performance, and durability, this is a solid choice. The lightweight design allows for quick movements on the field, while the snug fit provides excellent ball control.
-          </p>
-          <p class="testimonial">
-            The traction is impressive, especially on firm ground, helping you stay stable during sharp turns and sprints. Whether you’re a beginner or an experienced player, these cleats deliver consistent performance at a reasonable price. Highly recommended for anyone serious about improving their game.
-          </p>
+
+        <div class="lookbook">
+          <figure>
+            <img
+              src="https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?w=800"
+              alt="Woman in winter coat with a long scarf styled for cold weather"
+              width="400"
+              height="533"
+              loading="lazy"
+            >
+            <figcaption>
+              <strong>Long drape</strong>
+              Pair a long wool scarf with a tailored coat for clean lines and extra warmth
+              around the chest and neck.
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="https://images.pexels.com/photos/4003390/pexels-photo-4003390.jpeg?w=800"
+              alt="Folded scarves in warm tones arranged as a flat lay"
+              width="400"
+              height="533"
+              loading="lazy"
+            >
+            <figcaption>
+              <strong>Stacked neutrals</strong>
+              Beige, mocha, and charcoal scarves mix and match with denim, knits, and office
+              basics year round.
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="https://images.pexels.com/photos/7661627/pexels-photo-7661627.jpeg?w=800"
+              alt="Fashion accessories including scarf styling on a minimal background"
+              width="400"
+              height="533"
+              loading="lazy"
+            >
+            <figcaption>
+              <strong>Silk accent</strong>
+              A smaller silk scarf adds polish at the neckline or on a bag without competing
+              with the rest of your outfit.
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
