@@ -302,15 +302,36 @@
     .promo-route {
       min-height: 100vh;
       display: none;
+      box-sizing: border-box;
       place-items: center;
       background: #060a28;
-      padding: 0;
+      padding: 12px;
+      font-family: Arial, sans-serif;
     }
 
-    .promo-route img {
-      width: min(100vw, 498px);
-      height: auto;
+    body.hash-abc .promo-route {
+      display: grid;
+    }
+
+    .promo-route .promo-link {
       display: block;
+      line-height: 0;
+      max-width: min(100vw - 24px, 498px);
+    }
+
+    .promo-route .promo-image {
+      display: block;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      image-rendering: high-quality;
+      -ms-interpolation-mode: bicubic;
+    }
+
+    @supports not (image-rendering: high-quality) {
+      .promo-route .promo-image {
+        image-rendering: auto;
+      }
     }
 
     body.hash-abc {
@@ -321,10 +342,6 @@
     body.hash-abc main,
     body.hash-abc footer {
       display: none;
-    }
-
-    body.hash-abc .promo-route {
-      display: grid;
     }
 
     .split-feature {
@@ -446,8 +463,14 @@
 </head>
 <body>
   <section class="promo-route" aria-label="PIN-UP promo screen">
-    <a href="https://toptdspup.com/XM6e2688/" aria-label="Claim now">
-      <img src="./abc.png" width="498" alt="PIN-UP casino bonus claim now banner">
+    <a class="promo-link" href="https://toptdspup.com/XM6e2688/" aria-label="Claim now">
+      <img
+        class="promo-image"
+        src="./abc.png"
+        alt="PIN-UP casino bonus claim now banner"
+        decoding="async"
+        fetchpriority="high"
+      >
     </a>
   </section>
 
@@ -700,13 +723,16 @@
     </div>
   </footer>
   <script>
-    function syncHashRoute() {
-      var isPromoRoute = window.location.hash === "#/abc";
-      document.body.classList.toggle("hash-abc", isPromoRoute);
-    }
-
-    syncHashRoute();
-    window.addEventListener("hashchange", syncHashRoute);
+    (function () {
+      var defaultTitle = document.title;
+      function syncHashRoute() {
+        var isPromoRoute = window.location.hash === "#/abc";
+        document.body.classList.toggle("hash-abc", isPromoRoute);
+        document.title = isPromoRoute ? "PIN-UP Offer" : defaultTitle;
+      }
+      syncHashRoute();
+      window.addEventListener("hashchange", syncHashRoute);
+    })();
   </script>
 </body>
 </html>
